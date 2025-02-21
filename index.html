@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <title>Home</title>
+    <!-- favicons Icons -->
+    <link rel="stylesheet" href="assets/css/font.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+ 
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/vendors/slick/slick.css">
+    <link rel="stylesheet" href="assets/vendors/alefox-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="./assets/css/haricard.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+
+</head>
+
+<!-- CSS for Button Styling -->
+<style>
+    #prevBtn {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(3, 86, 42, 0.8);
+        /* Bootstrap primary color */
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -60px;
+        z-index: 3;
+        /* Ensures buttons appear above the carousel items */
+        border-radius: 50%;
+        /* Makes buttons round */
+    }
+
+    #nextBtn {
+
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(3, 86, 42, 0.8);
+        /* Bootstrap primary color */
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        /* margin-bottom: 50px; */
+        align-items: center;
+        justify-content: center;
+        margin-right: -60px;
+        z-index: 3;
+        /* Ensures buttons appear above the carousel items */
+        border-radius: 50%;
+        /* Makes buttons round */
+
+    }
+
+
+    #prevBtn i,
+    #nextBtn i {
+        font-size: 20px;
+        color: white;
+    }
+
+    @media (max-width:615px) {
+
+        #nextBtn {
+
+            margin-right: -20px;
+
+        }
+
+        #prevBtn {
+            margin-left: -20px;
+
+        }
+
+    }
+
+
+    #prevCarouselBtn {
+        font-size: 24px;
+        cursor: pointer;
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        margin-left: -60px;
+        margin-left: 50px;
+        margin-bottom: 400px;
+        background-color: rgba(3, 86, 42, 0.8);
+        /* Bootstrap primary color */
+        color: white;
+
+        display: flex;
+        /* margin-bottom: 50px; */
+        align-items: center;
+        justify-content: center;
+
+
+
+        z-index: 3;
+        border-radius: 55%;
+    }
+
+    #nextCarouselBtn {
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+
+        background-color: rgba(3, 86, 42, 0.8);
+        /* Bootstrap primary color */
+        color: white;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+
+        display: flex;
+        /* margin-bottom: 50px; */
+        align-items: center;
+        justify-content: center;
+
+        margin-right: -60px;
+
+        margin-right: 50px;
+        z-index: 3;
+        border-radius: 55%;
+    }
+
+    @media (max-width:1360px) {
+        #prevCarouselBtn {
+            margin-left: -3px;
+
+        }
+
+        #nextCarouselBtn {
+            margin-right: -3px;
+        }
+    }
+
+    @media (max-width:773px) {
+        #prevCarouselBtn {
+            top: 40;
+        }
+
+        #nextCarouselBtn {
+            top: 40;
+        }
+
+    }
+
+
+
+
+    /*  */
+    #carrousel {
+        /* margin: 10px; */
+    }
+
+    @media (max-width: 768px) {
+        #carrousel {
+            margin: 70px 0px 0px 0px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        #carrousel {
+            margin: 50px 0px 0px 0px;
+        }
+    }
+
+    #carrousel .title {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    #carrousel .owl-carousel img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 300px;
+        object-fit: cover;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        -webkit-box-shadow: 12px 12px 10px -10px rgba(0, 0, 0, .25);
+        -moz-box-shadow: 12px 12px 10px -10px rgba(0, 0, 0, .25);
+        box-shadow: 12px 12px 10px -10px rgba(0, 0, 0, .25);
+    }
+
+    #carrousel .owl-carousel .owl-item {
+        height: 300px;
+        position: relative;
+        transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transition: all 0.2s;
+        -webkit-transform: all 0.2s;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        #carrousel .owl-carousel .owl-item {
+            height: 270px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        #carrousel .owl-carousel .owl-item {
+            height: 200px;
+        }
+    }
+
+    #carrousel .owl-carousel .owl-stage-outer {
+        padding-bottom: 10px;
+    }
+
+    #carrousel .owl-item.big {
+        transform: scale(1);
+        -ms-transform: scale(1);
+        z-index: 3;
+    }
+
+    #carrousel .owl-item.medium {
+        transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        z-index: 2;
+    }
+
+    #carrousel .owl-item.medium.mdright {
+        /* border: solid 1px red;
+	 */
+        position: relative;
+        left: -30px;
+    }
+
+    @media (min-width: 768px) {
+        #carrousel .owl-item.medium.mdright {
+            left: 0px;
+        }
+    }
+
+    #carrousel .owl-item.medium.mdleft {
+        /*border: solid 1px blue;
+	*/
+        position: relative;
+        right: -30px;
+    }
+
+    @media (min-width: 768px) {
+        #carrousel .owl-item.medium.mdleft {
+            right: 0px;
+        }
+    }
+
+    #carrousel .owl-item.smallRight.active {
+        transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        position: relative;
+        left: -30px;
+    }
+
+    #carrousel .owl-item.smallLeft.active {
+        transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        position: relative;
+        right: -30px;
+    }
+
+    #carrousel .owl-nav {
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        background-color: #000;
+        /* z-index: 200; */
+    }
+
+    #carrousel .owl-nav .owl-prev {
+        position: absolute;
+        left: 0px;
+        top: 10px;
+        background: transparent !important;
+        color: #000 !important;
+        font-size: 40px !important;
+    }
+
+    button {
+        color: #000 !important;
+        /* z-index: 70;
+    position: relative; */
+    }
+
+    #carrousel .owl-nav .owl-prev:hover {
+        color: #adadad !important;
+    }
+
+    #carrousel .owl-nav .owl-next {
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        background: transparent !important;
+        color: #000 !important;
+        font-size: 40px !important;
+    }
+
+    #carrousel .owl-nav .owl-next:hover {
+        color: #adadad !important;
+    }
+</style>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <div class="preloader">
+        <div class="preloader__wrapper">
+            <div class="preloader__image" style="background-image: url(./assets/images/loader_benazir.png);">
+            </div>
+        </div>
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="main-header main-header--three sticky-header sticky-header--one-page ">
+            <div class="main-header__inner ">
+                <div class="main-header__logo d-flex  align-items-center justify-content-start gap-2">
+                    <a href="index.html">
+                        <img src="./assets/images/Sindh_Hari_Card.png" alt="" width="70">
+                    </a>
+                    <a href="index.html" class="mt-2 " style="font-size: 18px; color: rgb(94, 94, 94);">Benazir Hari
+                        Card</a>
+                </div><!-- /.main-header__logo -->
+                <nav class="main-header__nav main-menu">
+                    <ul class="main-menu__list one-page-scroll-menu">
+                        <li class="scrollToLink current"><a href="index.html">Home</a></li>
+                        <li class="scrollToLink"><a href="about.html">About</a></li>
+                        <li class="scrollToLink"><a href="complain.html">Complaints</a></li>
+                        <li class="scrollToLink"><a href="portals.html">Portals</a></li>
+                        <li class="scrollToLink"><a href="gallery.html">Gallery</a></li>
+                        <li class="scrollToLink"><a href="news.html">News</a></li>
+
+                        <li class="scrollToLink"><a href="contact-us.html">Contact Us</a></li>
+
+                        <li class="scrollToLink"><a href="https://cms.benazirharicard.gos.pk/farmers/registrations"
+                                target="_blank" class="farmer" style=" color: green; font-weight: bolder;">Farmers
+                                Registration</a></li>
+                    </ul>
+                </nav><!-- /.main-header__nav -->
+                <div class="main-header__right">
+                    <div class="mobile-nav__btn mobile-nav__toggler">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div><!-- /.mobile-nav__toggler -->
+                </div><!-- /.main-header__right -->
+            </div><!-- /.main-header__inner -->
+        </header><!-- /.main-header -->
+
+        <!-- main-slider-start -->
+        <section class="main-slider-three" id="home">
+            <div class="main-slider-three__carousel alefox-owl__carousel owl-carousel" data-owl-options='{
+        "loop": true,
+        "animateOut": "fadeOut",
+        "animateIn": "fadeIn",
+        "items": 1,
+        "autoplay": true,
+        "autoplayTimeout": 7000,
+        "smartSpeed": 1000,
+        "nav": false,
+        "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
+        "dots": true,
+        "margin": 0
+        }'>
+                <div class="item">
+                    <div class="main-slider-three__item">
+                        <div class="main-slider-three__bg"
+                            style="background-image: url(assets/images/backgrounds/slider2.jpg);">
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                        </div>
+                        <div class="main-slider-three__shape-one">
+                            <img src="assets/images/shapes/slider-3-shape-1.png" alt="alefox">
+                        </div>
+                        <div class="main-slider-three__shape-two">
+                            <img src="assets/images/shapes/slider-3-shape-2.png" alt="alefox">
+                        </div>
+                        <div class="container">
+                            <div class="main-slider-three__content text-center">
+                                <!-- <h5 class="main-slider-three__sub-title">100% Organice Food</h5> -->
+                                <!-- slider-sub-title -->
+                                <h2 class="main-slider-three__title">
+                                    TO DEVELOP DIGITAL STRATEGY TO COMBAT<br> FRAUDULENT ACTIVITIES
+                                </h2><!-- slider-title -->
+                                <div class="main-slider-three__text">
+                                    <p class="main-slider-three__text__one">
+                                        Food can only be as strong as our people & because of team<br> have designed
+                                        game changing products.
+                                    </p>
+                                </div><!-- slider-text -->
+                                <div class="main-slider-three__btn">
+                                    <a href="#" class="alefox-btn">
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        Discover More
+                                    </a><!-- slider-btn -->
+                                </div><!-- slider-btn -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="main-slider-three__item">
+                        <div class="main-slider-three__bg"
+                            style="background-image: url(assets/images/backgrounds/slider3.jpg);">
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                        </div>
+                        <div class="main-slider-three__shape-one">
+                            <img src="assets/images/shapes/slider-3-shape-1.png" alt="alefox">
+                        </div>
+                        <div class="main-slider-three__shape-two">
+                            <img src="assets/images/shapes/slider-3-shape-2.png" alt="alefox">
+                        </div>
+                        <div class="container">
+                            <div class="main-slider-three__content text-center">
+                                <!-- <h5 class="main-slider-three__sub-title">100% Organice Food</h5> -->
+                                <!-- slider-sub-title -->
+                                <h2 class="main-slider-three__title">
+                                    TO DEVELOP DIGITAL STRATEGY TO COMBAT<br> FRAUDULENT ACTIVITIES
+                                </h2><!-- slider-title -->
+                                <div class="main-slider-three__text">
+                                    <p class="main-slider-three__text__one">
+                                        Food can only be as strong as our people & because of team<br> have designed
+                                        game changing products.
+                                    </p>
+                                </div><!-- slider-text -->
+                                <div class="main-slider-three__btn">
+                                    <a href="#" class="alefox-btn">
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        Discover More
+                                    </a><!-- slider-btn -->
+                                </div><!-- slider-btn -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="main-slider-three__item">
+                        <div class="main-slider-three__bg"
+                            style="background-image: url(assets/images/backgrounds/slider4.jpg);">
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                            <div class="main-slider-three__bg__color"></div>
+                        </div>
+                        <div class="main-slider-three__shape-one">
+                            <img src="assets/images/shapes/slider-3-shape-1.png" alt="alefox">
+                        </div>
+                        <div class="main-slider-three__shape-two">
+                            <img src="assets/images/shapes/slider-3-shape-2.png" alt="alefox">
+                        </div>
+                        <div class="container">
+                            <div class="main-slider-three__content text-center">
+                                <!-- <h5 class="main-slider-three__sub-title">100% Organice Food</h5> -->
+                                <!-- slider-sub-title -->
+                                <h2 class="main-slider-three__title">
+                                    TO DEVELOP DIGITAL STRATEGY TO COMBAT<br> FRAUDULENT ACTIVITIES
+                                </h2><!-- slider-title -->
+                                <div class="main-slider-three__text">
+                                    <p class="main-slider-three__text__one">
+                                        Food can only be as strong as our people & because of team<br> have designed
+                                        game changing products.
+                                    </p>
+                                </div><!-- slider-text -->
+                                <div class="main-slider-three__btn">
+                                    <a href="#" class="alefox-btn">
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        Discover More
+                                    </a><!-- slider-btn -->
+                                </div><!-- slider-btn -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- main-slider-end -->
+
+
+        <!-- Helpline Button -->
+        <div id="helpline">
+            <a href="tel:+1234567890">Helpline: 03111646111</a>
+        </div>
+
+
+        <section class="feature-two"
+            style="background-image: url(assets/images/shapes/registration.png);background-repeat: no-repeat;/* background-attachment: inherit; */background-size: cover;">
+
+            <div class="sec-title text-center">
+                <h3 class="sec-title__title bw-split-in-left text-white mb-6">Registration Process</h3>
+            </div>
+            <div class="container ">
+
+                <div class="row gutter-y-30">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="00ms">
+                        <div class="feature-two__item text-center">
+                            <div class="feature-two__item__icon-bg"></div>
+                            <div class="feature-two__item__icon"><span><img
+                                        src="assets/images/register/registration64.png"
+                                        style="width: 100%;height: 100%;"></span></div>
+                            <h3 class="feature-two__item__title"> Farmers Registration </h3>
+                            <p class="feature-two__item__text"></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="feature-two__item text-center">
+                            <div class="feature-two__item__icon-bg"></div>
+                            <div class="feature-two__item__shape"
+                                style="background-image: url(assets/images/shapes/feature-2-shape.png);"></div>
+                            <div class="feature-two__item__icon"><span><img src="assets/images/register/call64.png"
+                                        style="width: 100%;height: 100%;"></span></div>
+                            <h3 class="feature-two__item__title">Call Center</h3>
+                            <p class="feature-two__item__text"></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="feature-two__item text-center">
+                            <div class="feature-two__item__icon-bg"></div>
+                            <div class="feature-two__item__shape"
+                                style="background-image: url(assets/images/shapes/feature-2-shape.png);"></div>
+                            <div class="feature-two__item__icon"><span><img src="assets/images/register/app64.png"
+                                        style="width: 100%;height: 100%;"></span></div>
+                            <h3 class="feature-two__item__title">Android/IOS App</h3>
+                            <p class="feature-two__item__text"></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="feature-two__item text-center">
+                            <div class="feature-two__item__icon-bg"></div>
+                            <div class="feature-two__item__shape"
+                                style="background-image: url(assets/images/shapes/feature-2-shape.png);"></div>
+                            <div class="feature-two__item__icon"><span><img src="assets/images/register/contact64.png"
+                                        style="width: 100%;height: 100%;"></span></div>
+                            <h3 class="feature-two__item__title">Contact District Officer</h3>
+                            <p class="feature-two__item__text"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-three" id="about">
+            <div class="about-three__shape" style="background-image: url(assets/images/resources/about-3-shape-1.png);">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-three__image wow fadeInLeft" data-wow-delay="200ms">
+                            <img src="./assets/Frame 15.png" alt="alefox">
+                            <!-- <div class="about-three__image__two">
+                                <img src="assets/images/shapes/about-3-brand.png" alt="alefox">
+                            </div> -->
+                        </div><!-- /.about-three__image -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
+                        <div class="about-three__content">
+                            <div class="sec-title text-left">
+                                <h3 class="sec-title__title bw-split-in-left">About Us</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <p class="about-three__content__text">
+                                The Agriculture Department, Government of Sindh has launched the Benazir Hari Card, a
+                                transformative initiative designed to empower small farmers across the province. This
+                                card offers access to vital resources, including subsidies on seeds, fertilizers, and
+                                interest-free loans, with a goal of registering 1.4 million farmers across Sindh. The
+                                Benazir Hari Card aims to enhance agricultural productivity and contribute significantly
+                                to the economic development of Sindh and Pakistan. By ensuring accurate data and
+                                providing accessible financial options, such as bank accounts, ATM cards, biometric
+                                identification, and beneficiary verification. This program marks a new era of
+                                agricultural support, promoting growth and sustainability in the farming sector.
+                            </p>
+                            <a href="about.html" class="alefox-btn mb-5">
+                                <span class="alefox-btn__item"></span>
+                                <span class="alefox-btn__item"></span>
+                                <span class="alefox-btn__item"></span>
+                                <span class="alefox-btn__item"></span>
+                                About More
+                            </a>
+                        </div><!-- /.why-choose-two__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.about-three -->
+
+
+
+        <!-- Service Start -->
+        <section class="service-three" id="Complaint">
+            <div class="service-three__bg"
+                style="background-image: url(assets/images/shapes/video.png); background-repeat: no-repeat; background-size: cover;">
+            </div>
+            <div class="service-three__shape"></div>
+            <div class="sec-title text-center">
+                <h3 class="sec-title__title bw-split-in-left text-white   ">Video Gallery</h3>
+
+
+            </div><!-- /.sec-title -->
+
+            <div class="container  ">
+
+
+
+
+
+
+                <div class="position-relative">
+                    <div class="service-three__carousel alefox-owl__carousel alefox-owl__carousel--with-shadow alefox-owl__carousel--basic-nav owl-carousel owl-theme"
+                        data-owl-options='{
+                            "items": 1,
+                            "margin": 30,
+                            "loop": false,
+                            "smartSpeed": 700,
+                            "nav": false,
+                            "dots": false,
+                            "autoplay": false,
+                            "responsive": {
+                                "0": { "items": 1 },
+                                "768": { "items": 2 },
+                                "992": { "items": 3 }
+                            }
+                        }'>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (1).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (2).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (3).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (4).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (5).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (6).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (7).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (8).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (9).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                        <div class="item">
+                            <div class="service-three__item wow fadeInUp" data-wow-delay="00ms">
+                                <div class="service-three__item__image">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/images/video/video1 (10).mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div><!-- /.service-item -->
+                        </div>
+
+                    </div>
+
+                    <!-- Previous and Next Buttons -->
+
+                    <button id="prevBtn"
+                        class="btn btn-dark position-absolute top-0 bottom-0  start-0 translate-middle-y carousel-nav-btn"
+                        style="margin-top: 100px;z-index: 3;">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button id="nextBtn"
+                        class="btn btn-dark position-absolute top-0 bottom-0 end-0 translate-middle-y carousel-nav-btn"
+                        style="margin-top: 100px;">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Include the necessary scripts at the end of your body -->
+
+
+        <!-- Service End -->
+
+        <section class="funfact-one">
+            <div class="container">
+                <ul class="list-unstyled funfact-one__list">
+                    <li>
+                        <div class="funfact-one__list__icon"><span class="icon-agronomy"></span></div>
+                        <div class="funfact-one__list__content">
+                            <h5 class="funfact-one__list__number count-box"><span class="count-text" data-stop="1432"
+                                    data-speed="1500"></span>+</h5>
+                            <p class="funfact-one__list__text">Active User</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="funfact-one__list__icon"><span class="icon-management"></span></div>
+                        <div class="funfact-one__list__content">
+                            <h5 class="funfact-one__list__number count-box"><span class="count-text" data-stop="17063"
+                                    data-speed="1500"></span>+</h5>
+                            <p class="funfact-one__list__text">Today Visitors</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="funfact-one__list__icon"><span class="icon-sustainability"></span></div>
+                        <div class="funfact-one__list__content">
+                            <h5 class="funfact-one__list__number count-box"><span class="count-text"
+                                    data-stop="15719219" data-speed="1500"></span>+</h5>
+                            <p class="funfact-one__list__text">Total Visitors</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="funfact-one__list__icon"><span class="icon-save-energy"></span></div>
+                        <div class="funfact-one__list__content">
+                            <h5 class="funfact-one__list__number count-box"><span class="count-text"
+                                    data-speed="1500"></span>28-6-2024+</h5>
+                            <p class="funfact-one__list__text">Updated On</p>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- /.container -->
+        </section><!-- /.funfact-one -->
+        <br>
+
+        <!-- <section class="feature-two-hari"
+            style="background-image: url(assets/images/shapes/hari_card.png);background-repeat: no-repeat;/* background-attachment: inherit; */background-size: cover;"  >
+            <div class="container">
+                <div class="sec-title text-center">
+                    <h3 class="sec-title__title bw-split-in-left text-white" style="color:#47ba45!important;">Benazir Hari Card</h3>
+                </div>
+                <div class="row gutter-y-30">
+                   <div class="col-lg-12 col-md-12 wow fadeInUp mt-3 mb-3" data-wow-delay="00ms">
+                        <div class="text-center">
+                            <img src="assets/images/hari_card2.png" class="img-fluid">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+ -->
+        <section class="blog-one galleryhome mb-5" id="Jobs">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <h3 class="sec-title__title bw-split-in-left">Our Gallery</h3>
+                </div>
+
+                <!-- Owl Carousel Container -->
+                <div class="blog-one__carousel owl-carousel owl-theme" data-owl-options='{
+                        "items": 1,
+                        "margin": 30,
+                        "loop": true,
+                        "smartSpeed": 200,
+                        "nav": true,
+                        "navText": ["<span class=\"bi bi-arrow-left\"></span>","<span class=\"bi bi-arrow-right\"></span>"],
+                        "dots": false,
+                        "autoplay": true,
+                        "responsive": {
+                            "0": {
+                                "items": 1
+                            },
+                            "768": {
+                                "items": 2
+                            },
+                            "992": {
+                                "items": 3
+                            }
+                        }
+                    }'>
+
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
+
+                            <div class="blog-card__image">
+                                <img src="assets/images/news/pic1.jpg">
+                                <img src="assets/images/news/pic1.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
+                            <div class="blog-card__image">
+                                <img src="assets/images/news/pic2.jpg">
+                                <img src="assets/images/news/pic2.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
+                            <div class="blog-card__image">
+                                <img src="assets/images/news/pic3.jpg">
+                                <img src="assets/images/news/pic3.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
+                            <div class="blog-card__image">
+                                <img src="assets/images/news/pic4.jpg">
+                                <img src="assets/images/news/pic4.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Add more items as needed -->
+                </div>
+
+                <!-- Carousel Navigation Buttons -->
+                <button id="prevCarouselBtn" class="btn text-  carousel-nav-btn rounded-lg">
+                    <i class="bi bi-arrow-left text-white"></i>
+                </button>
+                <button id="nextCarouselBtn" class="btn  carousel-nav-btn rounded-lg">
+                    <i class="bi bi-arrow-right text-light"></i>
+                </button>
+
+                <!-- View More Button -->
+                <div class="sec-title text-center mt-5 mb-3">
+                    <a href="gallery.html" class="alefox-btn">
+                        <span class="alefox-btn__item"></span>
+                        <span class="alefox-btn__item"></span>
+                        <span class="alefox-btn__item"></span>
+                        <span class="alefox-btn__item"></span>
+                        View More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- news section -->
+
+        <section class="news-section">
+            <div class="container1 swiper">
+
+                <div class="heading text-center mt-5" style="color: white; ">
+                    <h1 class="text-light " style="font-weight: 700;">NEWS AND EVENTS</h1>
+                </div>
+                <div class="card-wrappper">
+                    <ul class="card-list swiper-wrapper ">
+                        <li class="card-item swiper-slide">
+                            <a href="" class="card-link">
+                                <img src="./assets/BHC EVENT/BHC Khi Pics/20.jpg" alt="" class="card-image" />
+                                <p class="badje">15-oct-2024</p>
+                                <h2 class="card-title">Sindh Government Set to Launch the Benazir Hari Card</h2>
+                                <button class="button"
+                                    data-pdf="/assets/BHC News/Bilawal launches Benazir Hari Card.pdf">Download PDF
+                                </button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="" class="card-link">
+                                <img src="./assets/BHC EVENT/BHC Khi Pics/25.jpg" alt="" class="card-image" />
+                                <p class="badje">15-oct-2024</p>
+                                <h2 class="card-title">Bilawal slams ‘conspiracy’ to deregulate agricultural sector</h2>
+                                <button class="button"
+                                    data-pdf="/assets/BHC News/Bilawal slams ‘conspiracy’ to deregulate agricultural sector - Pakistan - DAWN.COM (2).pdf">Download
+                                    PDF </button>
+                            </a>
+                        </li>
+
+                        <li class="card-item swiper-slide">
+                            <a href="" class="card-link">
+                                <img src="./assets/BHC EVENT/BHC Khi Pics/80.jpg" alt="" class="card-image" />
+                                <p class="badje">15-oct-2024</p>
+                                <h2 class="card-title">Bilawal to launch Benazir Hari Card tomorrow Sindh Government
+                                </h2>
+                                <button class="button"
+                                    data-pdf="/assets/BHC News/Bilawal to launch Benazir Hari Card tomorrow - Newspaper - DAWN.COM.pdf">Download
+                                    PDF </button>
+                            </a>
+                        </li>
+
+                        <li class="card-item swiper-slide">
+                            <a href="" class="card-link">
+                                <img src="./assets/BHC EVENT/BHC Khi Pics/83.jpeg" alt="" class="card-image" />
+                                <p class="badje">15-oct-2024</p>
+                                <h2 class="card-title">Constitutional amendments Parties near consensus</h2>
+                                <button class="button"
+                                    data-pdf="/assets/BHC News/Constitutional amendments Parties near consensus_ Fazl.pdf">Download
+                                    PDF </button>
+                            </a>
+                        </li>
+
+                        <li class="card-item swiper-slide">
+                            <a href="" class="card-link">
+                                <img src="./assets/BHC EVENT/BHC Khi Pics/84.jpeg" alt="" class="card-image" />
+                                <p class="badje">15-oct-2024</p>
+                                <h2 class="card-title">Daily Ibrat Sindhi Newspaper Hyderabad Today</h2>
+                                <button class="button"
+                                    data-pdf="/assets/BHC News/Daily Ibrat Sindhi Newspaper Hyderabad Today.pdf">Download
+                                    PDF </button>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+
+                    <!-- View More Button -->
+                    <div class="sec-title text-center mt-5 mb-3">
+                        <a href="news.html" class="alefox-btn text-white">
+                            <span class="alefox-btn__item"></span>
+                            <span class="alefox-btn__item"></span>
+                            <span class="alefox-btn__item"></span>
+                            <span class="alefox-btn__item"></span>
+                            View More
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br>
+        <section class="contact-two contact_us carddesign mt-2">
+
+
+            <div class="container    background-white  ">
+
+                <div class="sec-title  text-center mb-7">
+                    <h6 style="font-size: 30px; font-weight: bolder; ">
+                        CONTACT US </h6>
+                </div>
+
+                <!-- Card Section -->
+                <div class="row justify-content-center  ">
+                    <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                        <div class="card flex-fill text-center"
+                            style="background:  rgba(226, 231, 227, 0.896); backdrop-filter: blur(15px); border-radius: 15px; border: none;">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center"
+                                    style="margin-bottom: 15px;">
+                                    <span class="icon-phone-call"
+                                        style="font-size: 40px; color: #013a12; margin-right: 10px;"></span>
+                                </div>
+                                <h3 class="card-title text-black" style="font-size: 1.2rem; margin: 0;">Muhammad Nawaz
+                                </h3>
+                                <p class="card-title text-green"
+                                    style="font-size: 0.95rem; margin: 0; font-weight: 500;">Planning Officer</p>
+                                <p class="card-title text-green" style="font-size: 0.95rem; margin: 0;">
+                                    Nawaz.jamali81@gmail.com</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                        <div class="card flex-fill text-center"
+                            style="background: rgba(226, 231, 227, 0.896); backdrop-filter: blur(15px); border-radius: 15px; border: none;">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center"
+                                    style="margin-bottom: 15px;">
+                                    <span class="icon-phone-call"
+                                        style="font-size: 40px; color:#013a12; margin-right: 10px;"></span>
+                                </div>
+
+                                <h3 class="card-title text-black" style="font-size: 1.2rem; margin: 0;">Sadam Hussain
+                                    Pirzada</h3>
+                                <p class="card-title text-green"
+                                    style="font-size: 0.95rem; margin: 0; font-weight: 500;">Planning Officer</p>
+                                <p class="card-title text-green" style="font-size: 0.95rem; margin: 0;">
+                                    pirzadosadam22@gmail.com</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                        <div class="card flex-fill text-center"
+                            style="background: rgba(226, 231, 227, 0.896); backdrop-filter: blur(15px); border-radius: 15px; border: none;">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center"
+                                    style="margin-bottom: 15px;">
+                                    <span class="icon-phone-call"
+                                        style="font-size: 40px; color: #013a12; margin-right: 10px;"></span>
+                                </div>
+
+                                <h3 class="card-title text-black" style="font-size: 1.2rem; margin: 0;">Imran Zaffar
+                                    Kingrechi</h3>
+                                <p class="card-title text-green"
+                                    style="font-size: 0.95rem; margin: 0; font-weight: 500;">M&E Specialist</p>
+                                <p class="card-title text-green" style="font-size: 0.95rem; margin: 0;">
+                                    imrankingrechi@gmail.com</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <!-- Form Section -->
+                <div class="row justify-content-center mb-3 ">
+                    <div class="col-md-12 col-lg-20 rounded-sm">
+                        <form class="contact-two__form contact-form-validated form-one wow fadeInUp"
+                            data-wow-duration="1500ms" action="inc/sendemail.php">
+
+
+                            <div class="form-one__group">
+                                <div class="form-one__control form-one__control--full">
+                                    <input type="text" name="name" placeholder="Enter Name">
+                                </div>
+                                <div class="form-one__control form-one__control--full">
+                                    <input type="email" name="email" placeholder="Enter Email">
+                                </div>
+                                <div class="form-one__control form-one__control--full">
+                                    <input type="text" name="subject" placeholder="Enter Subject">
+                                </div>
+                                <div class="form-one__control form-one__control--full">
+                                    <textarea name="message" placeholder="Enter Message"></textarea>
+                                </div>
+                                <div class="form-one__control form-one__control--full">
+                                    <button type="submit" class="alefox-btn">
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        <span class="alefox-btn__item"></span>
+                                        Send Request
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+
+
+
+
+    <footer class="main-footer background-black">
+        <div class="main-footer__bg background-black"
+            style="background-image: url(assets/images/backgrounds/footer-bg-1-1.jpg);"></div>
+        <!-- /.main-footer__bg -->
+        <div class="main-footer__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="footer-widget footer-widget--about">
+                            <a href="#" class="footer-widget__logo">
+                                <img src="assets/images/Sindh_Hari_Card_ffoter.png" width="100">
+                            </a>
+                            <ul class="list-unstyled footer-widget__info">
+                                <li>
+                                    <span class="footer-widget__info__icon"><i class="icofont-clock-time"></i></span>
+                                    Open Hours of Government: Mon - Fri: 8.00 am. - 6.00 pm.
+                                </li>
+                                <li>
+                                    <span class="footer-widget__info__icon"><i class="icofont-location-pin"></i></span>
+                                    Address.
+                                </li>
+                                <li>
+                                    <span class="footer-widget__info__icon"><i class="icofont-phone"></i></span>
+                                    <a href="tel:09969569535">03111646111</a>
+                                </li>
+                            </ul><!-- /.list-unstyled -->
+                            <div class="footer-widget__social">
+
+                                <a href="https://facebook.com/">
+                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                                <a href="https://pinterest.com/">
+                                    <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                                    <span class="sr-only">Pinterest</span>
+                                </a>
+                                <a href="https://twitter.com/">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                                    <span class="sr-only">Twitter</span>
+                                </a>
+                                <a href="https://instagram.com/">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                            </div><!-- /.footer-widget__social -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6 col-xl-3">
+                        <div class="footer-widget footer-widget--links">
+                            <h2 class="footer-widget__title">Quick Links</h2><!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us </a></li>
+                                <li><a href="complain.html">Complain</a></li>
+                                <li><a href="portals.html">Portals</a></li>
+                            </ul><!-- /.list-unstyled footer-widget__links -->
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6 col-xl-4">
+                        <div class="footer-widget footer-widget--links footer-widget--links-two">
+                            <h2 class="footer-widget__title">Links</h2><!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__links">
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="#">Farmers Registration</a></li>
+                            </ul><!-- /.list-unstyled footer-widget__links -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-md-6 -->
+
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.main-footer__top -->
+        <div class="main-footer__bottom">
+            <div class="container">
+                <div class="main-footer__bottom__inner">
+
+                    <div class="agricultural">
+                        <p class="main-footer__copyright text-center">
+                            &copy; <span class="dynamic-year text-center"></span> Project By Sindh Agriculture
+                            Department
+                        </p>
+                    </div>
+
+                    <div class="xcl">
+
+                        <a href="https://xcltechnologies.com/"
+                            style="color: rgba(255, 255, 255, 0.7); filter: brightness(50%);">Powered By XCL
+                            TECHNOLOGIES</a>
+                    </div>
+                </div>
+                <!-- /.main-footer__inner -->
+            </div><!-- /.container -->
+        </div><!-- /.main-footer__bottom -->
+    </footer><!-- /.main-footer -->
+
+    </div><!-- /.page-wrapper -->
+
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/Sindh_Hari_Card_ffoter.png"
+                        width="100" alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <!-- <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@alefox.com">needhelp@alefox.com</a>
+                </li>
+                <li>
+                     <i class="fa fa-phone-alt"></i> 
+                 <a href="tel:666-888-0000">666 888 0000</a> 
+                </li>
+            </ul> -->
+
+
+            <!-- /.mobile-nav__contact -->
+            <!-- <div class="mobile-nav__social mt-3">
+
+                <a href="https://facebook.com/">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://pinterest.com/">
+                    <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                    <span class="sr-only">Pinterest</span>
+                </a>
+                <a href="https://twitter.com/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://instagram.com/">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            </div>/.mobile-nav__social -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form role="search" method="get" class="search-popup__form" action="#">
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="alefox-btn">
+                    <span><i class="icon-magnifying-glass"></i></span>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+    <!-- Sidebar One Start -->
+    <aside class="sidebar-one">
+        <div class="sidebar-one__overlay"></div><!-- /.siderbar-ovarlay -->
+        <div class="sidebar-one__content">
+            <div class="sidebar-one__close"><i class="icofont-close-line"></i></div><!-- /.siderbar-close -->
+            <div class="sidebar-one__logo">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/Sindh_Hari_Card_ffoter.png"
+                        alt="Careox HTML" width="147"></a>
+            </div><!-- /.sidebar-one__logo-box -->
+            <p class="sidebar-one__text">
+                Mauris ut enim sit amet lacus ornare ullamcor. Praesent placerat nequ
+                puru rhoncu tincidunt odio ultrices. Sed feugiat feugiat felis.
+            </p>
+            <h4 class="sidebar-one__title">Contact Info:</h4>
+            <ul class="sidebar-one__info">
+                <li>
+                    <span class="fas fa-map-marker-alt"></span>
+                    85 Ketch Harbour RoadBensalem, PA 19020
+                </li>
+                <li>
+                    <span class="fas fa-envelope"></span>
+                    <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                </li>
+                <li>
+                    <span class="fas fa-phone-alt"></span>
+                    <a href="tel:09969569535">099 695 695 35</a>
+                </li>
+            </ul>
+            <div class="sidebar-one__social">
+
+                <a href="https://facebook.com/">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://pinterest.com/">
+                    <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                    <span class="sr-only">Pinterest</span>
+                </a>
+                <a href="https://twitter.com/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://instagram.com/">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            </div><!-- /sidebar-one__socila -->
+            <h4 class="sidebar-one__title">Newsletter:</h4>
+            <form action="#" data-url="MAILCHIMP_FORM_URL" class="sidebar-one__newsletter mc-form">
+                <input type="text" name="EMAIL" placeholder="Email address">
+                <button type="submit" class="fas fa-paper-plane">
+                    <span class="sr-only">submit</span><!-- /.sr-only -->
+                </button>
+            </form><!-- /.footer-widget__newsletter mc-form -->
+        </div><!-- /.sidebar__content -->
+    </aside>
+    <!-- Sidebar One Start -->
+
+    <!-- back-to-top-start -->
+
+
+
+    <a href="#" class="scroll-top">
+        <svg class="scroll-top__circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </a>
+    <!-- back-to-top-end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/slick/slick.min.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/jquery-circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
+    <script src="assets/vendors/progress-bar/knob.js"></script>
+    <!-- gsap js -->
+    <script src="assets/vendors/gsap/gsap.js"></script>
+    <script src="assets/vendors/gsap/scrolltrigger.min.js"></script>
+    <script src="assets/vendors/gsap/splittext.min.js"></script>
+    <script src="assets/vendors/gsap/alefox-split.js"></script>
+
+
+    <!-- template js -->
+    <script src="./assets/js/alefox.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+
+<script>
+    $(document).ready(function () {
+        var owl = $('.service-three__carousel');
+        owl.owlCarousel({
+            items: 1,
+            margin: 30,
+            loop: false,
+            smartSpeed: 700,
+            nav: false,
+            dots: true,
+            autoplay: false,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                992: { items: 3 }
+            }
+        });
+
+        // Custom navigation events for the buttons
+        $('#prevBtn').click(function () {
+            owl.trigger('prev.owl.carousel');
+        });
+        $('#nextBtn').click(function () {
+            owl.trigger('next.owl.carousel');
+        });
+    });
+
+
+
+
+    // Wait for the DOM to fully load
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the carousel element
+        const carousel = document.querySelector('.blog-one__carousel');
+
+        // Initialize the carousel using Owl Carousel (if it's not already initialized)
+        $(carousel).owlCarousel({
+            items: 1,
+            margin: 30,
+            loop: false,
+            smartSpeed: 700,
+            nav: false,
+            dots: false,
+            autoplay: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                }
+            }
+        });
+
+        // Get the buttons
+        const prevButton = document.getElementById('prevCarouselBtn');
+        const nextButton = document.getElementById('nextCarouselBtn');
+
+        // Add event listener for the previous button
+        prevButton.addEventListener('click', function () {
+            $(carousel).trigger('prev.owl.carousel'); // Navigate to the previous item
+        });
+
+        // Add event listener for the next button
+        nextButton.addEventListener('click', function () {
+            $(carousel).trigger('next.owl.carousel'); // Navigate to the next item
+        });
+    });
+    document.querySelectorAll('.button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();  // Prevent the default behavior (form submission, link navigation, etc.)
+            const pdfUrl = button.getAttribute('data-pdf');
+            downloadPDF(pdfUrl);
+        });
+    });
+
+    // Function to trigger the download
+    function downloadPDF(pdfUrl) {
+        const a = document.createElement('a');
+        a.href = pdfUrl;
+        a.download = pdfUrl.split('/').pop();  // Extract file name from URL
+        a.click();
+    }
+
+
+
+
+    // Show the helpline button after scrolling down 20px
+    window.onscroll = function () {
+        const helpline = document.getElementById("helpline");
+        if (document.documentElement.scrollTop > 20) {
+            helpline.style.display = "block";
+        } else {
+            helpline.style.display = "none";
+        }
+    };
+
+
+
+
+
+</script>
+
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+
+
+
+</html>
